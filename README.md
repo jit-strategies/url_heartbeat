@@ -8,7 +8,6 @@ These instructions will cover usage information and for the docker container
 
 ### Prerequisities
 
-
 In order to run this container you'll need docker installed.
 
 * [Windows](https://docs.docker.com/windows/started)
@@ -17,15 +16,17 @@ In order to run this container you'll need docker installed.
 
 ### Usage
 
+Call https://example.com every 2 minutes with a 5 second timeout:
+
 ```shell
-docker run as6o/url-heartbeat -e URL=https://example.com -e PERIOD=60 -e TIMEOUT=5
+docker run as6o/url-heartbeat:latest -e URL=https://example.com -e PERIOD=120 -e TIMEOUT=5
 ```
 
 #### Environment Variables
 
-* `URL` - The URL that will be called via GET
-* `PERIOD` - The period in seconds between calls
-* `TIMEOUT` - The timeout in seconds for the call
+* `URL` - The URL that will be called via GET (default: <not set>)
+* `PERIOD` - The period in seconds between calls (default: 60)
+* `TIMEOUT` - The timeout in seconds for the call (default: 2.0)
 
 #### Logging
 

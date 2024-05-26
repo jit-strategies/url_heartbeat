@@ -11,7 +11,6 @@ COPY . /app
 RUN pip install requests
 
 # Define environment variables with default values
-ENV URL=http://example.com
 ENV PERIOD=60
 ENV TIMEOUT=10.0
 

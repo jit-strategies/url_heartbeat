@@ -37,13 +37,18 @@ def start_heartbeat(url, period, timeout, logger):
         time.sleep(period)
 
 if __name__ == "__main__":
-    # Get environment variables
-    url = os.getenv("URL", "http://example.com")
-    period = int(os.getenv("PERIOD", "60"))
-    timeout = float(os.getenv("TIMEOUT", "10.0"))
-
     # Setup logger
     logger = setup_logger()
+
+    # Get environment variables
+    url = os.getenv("URL")
+    if not url:
+        logger.error("URL environment variable is required")
+        sys.exit(1)
+
+    period = int(os.getenv("PERIOD", "60"))
+    timeout = float(os.getenv("TIMEOUT", "2.0"))
+
     logger.info(f"Starting heartbeat to {url} every {period} seconds with a timeout of {timeout} seconds.")
 
     # Start heartbeat
