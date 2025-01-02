@@ -1,0 +1,5 @@
+services:
+  heartbeat:
+    image: jitstrategies/url-heartbeat:latest
+    env_file: "heartbeat.env"
+
