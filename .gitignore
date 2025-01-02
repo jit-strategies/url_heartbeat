@@ -1,3 +1,4 @@
+heartbeat.env
 /venv/
 /.idea/
 *.iml
